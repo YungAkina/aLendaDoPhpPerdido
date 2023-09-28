@@ -1,58 +1,37 @@
 <?php
-
-class aplicativo{
+class Aplicativo {
     private string $nome;
     private string $categoria;
-    private string $numerodedownloads;
+    private string $numerodownloads;
     private string $avaliacao;
     private string $desenvolvedora;
 
-    function construct__(string $nome, float $categoria, string $numerodedownloads, string $avaliacao, string $desenvolvedora)
-    {
-        $this->definirnome($nome);
-        $this->definircategoria($categoria);
-        $this->definirnumerodedownloads($numerodedownloads);
-        $this->definiravaliacao($avaliacao);
-        $this->definirdesenvolvedora($desenvolvedora);
+    public function __construct(string $nome, string $categoria, string $numerodownloads, string $avaliacao, string $desenvolvedora) {
+        $this->nome = $nome;
+        $this->categoria = $categoria;
+        $this->numerodownloads = $numerodownloads;
+        $this->avaliacao = $avaliacao;
+        $this->desenvolvedora = $desenvolvedora;
     }
-   function definirnome(string $nome){
-    $this->nome = $nome;
-   }
-    function definircategoria(string $categoria){
-        $this->nome = $categoria;
-    }
-    function definirnumerodedownloads(string $numerodedownloads){
-        $this->nome = $numerodedownloads;
-    }
-    function definiravaliacao(string $avaliacao){
-        $this->nome = $avaliacao;
-    }
-    function definirdesenvolvedora(string $desenvolvedora){
-        $this->nome = $desenvolvedora;
-    }
-    
-    
-    public function exibirnome()
-    {
+
+    public function exibirNome() {
         return $this->nome;
     }
-    public function exibircategoria()
-    {
+
+    public function exibirCategoria() {
         return $this->categoria;
     }
-    public function exibirnumerodedownloads()
-    {
-        return $this->numerodedownloads;
+
+    public function exibirNumeroDownloads() {
+        return $this->numerodownloads;
     }
-    public function exibiravaliacao()
-    {
+
+    public function exibirAvaliacao() {
         return $this->avaliacao;
     }
-    public function exibirdesenvolvedora()
-    {
-        return $this-> desenvolvedora;
+
+    public function exibirDesenvolvedora() {
+        return $this->desenvolvedora;
     }
-
-    }
-
-
+}
+?>
