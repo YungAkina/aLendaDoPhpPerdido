@@ -1,19 +1,17 @@
 <?php
 require "conexao.php";
-require "aplicativo.php";
-require "Repositorioaplicativo.php";
+require "RepositorioAplicativo.php";
 
-$repLivro = new Repositorioaplicativo();
+$repositorio = new RepositorioAplicativo();
 
-$todasBebidas = $repBebida->exibirTudo($banco);
+$valores = $repositorio->listar($banco);
 
-foreach($todosAplicativos as $aplicativo){
-    echo "\n--------------------------";
-    echo "\n nome do aplicativo | {$aplicativo['nomeaplicativo']}";
-    echo "\n categoria do aplicativo | {$aplicativo['categoriaaplicativo']}";
-    echo "\n numerodedownloads do aplicativo | {$aplicativo['numerodownloadsaplicativo']}";
-    echo "\n avaliacao do aplicativo | {$aplicativo['avaliacaoaplicativo']}";
-    echo "\n desenvolvedora do aplicativo |{$aplicativo['desenvolvedoraaplicativo']}";
-    echo "\n--------------------------";
+foreach ($valores as $valor) {
+    echo "Nome: " . $valor['nome'] . PHP_EOL;
+    echo "Categoria: " . $valor['categoria'] . PHP_EOL;
+    echo "Número de Downloads: " . $valor['numerodownloads'] . PHP_EOL;
+    echo "Avaliação: " . $valor['avaliacao'] . PHP_EOL;
+    echo "Desenvolvedora: " . $valor['desenvolvedora'] . PHP_EOL;
+    echo PHP_EOL;
 }
-
+?>
